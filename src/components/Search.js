@@ -45,7 +45,6 @@ class Search extends React.Component {
     return(
       <section className="section">
         <div className="search">
-
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label is-large">Developer main language</label>
@@ -55,7 +54,6 @@ class Search extends React.Component {
                 placeholder="Developer007"
                 onChange={this.handleChange}
               />
-
             </div>
             <button className="button has-background-grey" >Find favourite language</button>
           </form>
