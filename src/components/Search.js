@@ -65,7 +65,7 @@ class Search extends React.Component {
                   Object.values(findingMostCommon))
               }).filter(l => l !== 'null').join(' & ')}
             </h3> :
-              <h3>GitHub does not know this username
+              <h3>GitHub does not know this username.
               </h3> }
           </div>
         </div>
