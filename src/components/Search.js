@@ -2,8 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 let developerName = 'Your develpoer'
-
-
+let findingMostCommon
 class Search extends React.Component {
 
   constructor(){
@@ -19,22 +18,34 @@ class Search extends React.Component {
   }
 
   handleChange(e){
-    console.log(e.target.value)
     developerName = e.target.value
   }
 
   handleSubmit(e){
     e.preventDefault()
     axios.get(`https://api.github.com/users/${developerName}/repos`)
-      .then(res => this.setState({languages: this.state.languages.concat(res.data.map(repo => repo.language))}))
+      .then(res => {
+        if (res.data.length === 0){
+          this.setState({languages: ['No language in GitHub (his page is empty).']})
+        } else {
+          this.setState({languages: this.state.languages.concat(res.data.map(repo =>  repo.language))})
+        }
+      })
       .then(this.setState({ errors: {}}))
       .catch(err => this.setState({ errors: err.response.statusText }))
   }
 
 
-
-
   render(){
+
+    findingMostCommon = this.state.languages.reduce(function(prev, cur) {
+      prev[cur] = (prev[cur] || 0) + 1
+      return prev
+    }, {})
+    console.log(Object.keys(findingMostCommon).filter(x => {
+      return findingMostCommon[x] === Math.max.apply(null,
+        Object.values(findingMostCommon))
+    }).filter(l => l !== null).join(' & '))
     return(
       <section className="section">
         <div className="hero">
@@ -55,10 +66,10 @@ class Search extends React.Component {
 
             <div>
               {!(this.state.errors === 'Not Found') ? <h3>{developerName} mostly worked with&nbsp;
-                { this.state.languages.sort((a,b) =>
-                  this.state.languages.filter(v => v===a).length
-        - this.state.languages.filter(v => v===b).length
-                ).pop()}
+                { Object.keys(findingMostCommon).filter(x => {
+                  return findingMostCommon[x] === Math.max.apply(null,
+                    Object.values(findingMostCommon))
+                }).filter(l => l !== 'null').join(' & ')}
               </h3> :
                 <h3>GitHub does not know this username
                 </h3> }
