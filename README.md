@@ -49,7 +49,7 @@ Since I was not under time pressure, I spent an hour to play with the API. I nev
 ## How to run the app
 
 
-After unzipping the app press yarn Then yarn serve That should run the app automatically on your default browser.
+After unzipping the app run in your terminal the commend  **yarn** Then **yarn serve**. That should run the app automatically on your default browser.
 
 
 Hope you will enjoy using the app, 
