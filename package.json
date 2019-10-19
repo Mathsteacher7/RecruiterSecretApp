@@ -1,0 +1,34 @@
+{
+  "name": "MVFCodingTest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Mathsteacher7/MVFCodingTest.git",
+  "author": "Daniel H Cohen <hofcohen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server --mode=development",
+    "build": "webpack -p"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
+    "bulma": "^0.8.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}
