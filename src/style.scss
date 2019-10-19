@@ -1,0 +1,28 @@
+@import '~bulma';
+
+* {
+  font-family: 'Bitter', serif;
+}
+
+.general{
+  background-color: #8B909E;
+  // background-size: contain;
+  margin: 0 100px;
+}
+.hero {
+  background-color: darkblue;
+  color: white;
+}
+
+h1, h2 {
+  text-align: justify;
+}
+h3 {
+  font-size: 20px;
+  text-align: justify;
+}
+
+button {
+  font-weight: 700;
+  margin: 20px 0;
+}

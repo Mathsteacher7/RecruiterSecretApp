@@ -42,44 +42,38 @@ class Search extends React.Component {
       prev[cur] = (prev[cur] || 0) + 1
       return prev
     }, {})
-    console.log(Object.keys(findingMostCommon).filter(x => {
-      return findingMostCommon[x] === Math.max.apply(null,
-        Object.values(findingMostCommon))
-    }).filter(l => l !== null).join(' & '))
     return(
       <section className="section">
-        <div className="hero">
-          <div className="hero-body">
-            <form onSubmit={this.handleSubmit}>
-              <div className="field">
-                <label className="label">Developer main language</label>
-                <input
-                  className="input"
-                  name="developer"
-                  placeholder="Developer007"
-                  onChange={this.handleChange}
-                />
+        <div className="search">
 
-              </div>
-              <button className="button is-primary" >Find out the developer's favourite language</button>
-            </form>
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <label className="label is-large">Developer main language</label>
+              <input
+                className="input"
+                name="developer"
+                placeholder="Developer007"
+                onChange={this.handleChange}
+              />
 
-            <div>
-              {!(this.state.errors === 'Not Found') ? <h3>{developerName} mostly worked with&nbsp;
-                { Object.keys(findingMostCommon).filter(x => {
-                  return findingMostCommon[x] === Math.max.apply(null,
-                    Object.values(findingMostCommon))
-                }).filter(l => l !== 'null').join(' & ')}
-              </h3> :
-                <h3>GitHub does not know this username
-                </h3> }
             </div>
+            <button className="button has-background-grey" >Find favourite language</button>
+          </form>
+
+          <div>
+            {!(this.state.errors === 'Not Found') ? <h3>{developerName} mostly worked with&nbsp;
+              { Object.keys(findingMostCommon).filter(x => {
+                return findingMostCommon[x] === Math.max.apply(null,
+                  Object.values(findingMostCommon))
+              }).filter(l => l !== 'null').join(' & ')}
+            </h3> :
+              <h3>GitHub does not know this username
+              </h3> }
           </div>
         </div>
       </section>
     )
   }
-
 }
 
 export default Search
