@@ -6,7 +6,7 @@ To build an application that allows users to enter an arbitrary Github username 
 
 ## The story
 
-I decided to build the site as a tool for recruiters. As recruiters are not developers, sometimes they are lack of knowledge about all the key words that are written in their ads. For them I created a simple tool - provide the username in GitHub of the developer, and the app will return you what is the most common language that this user used. That will also help them to understand if the person really is a JavaScript developer, or maybe they used to code with other languages most of the time.
+I decided to build the app as a tool for recruiters. As recruiters are not developers, sometimes they are lack of understanding about all the key words that are written in their ads. For that I created a simple tool - provide the username in GitHub of the developer, and the app will return you what is the most common language that this user used. That will also help them to understand if the person really is a JavaScript developer, or maybe they used to code with other languages most of the time.
 
 ## Approach
 
@@ -28,5 +28,25 @@ Since I was not under time pressure, I spent an hour just to play with the API. 
 It took me another hour an a half to set all the webpacks and build the basic function of the app.
 After that I fixed the problems I discovered for another hour and a half and spent another hour to play with the styling.
 In total, the building of the app too four hours, not including the time I played with the API to know it.
+
+## Technologies Used
+ * HTML5
+ * CSS3 (SASS)
+ * JavaScript (ES6)
+ * React (including React-DOM)
+ * axios
+ * Webpack
+ * Bulma
+ * babel
+ * Git
+ * GitHub
+ 
+## How to run the app
+After unzipipng the app press **yarn**
+Then **yarn serve**
+That should run the app automatically on your default browser.
+
+Hope you will enjoy using the app,
+Daniel
 
  
