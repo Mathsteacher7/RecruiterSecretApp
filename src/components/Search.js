@@ -28,6 +28,7 @@ class Search extends React.Component {
         if (res.data.length === 0){
           this.setState({languages: ['No language in GitHub (his page is empty).']})
         } else {
+          this.setState({languages: []})
           this.setState({languages: this.state.languages.concat(res.data.map(repo =>  repo.language))})
         }
       })

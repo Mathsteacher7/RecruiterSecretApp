@@ -6,11 +6,13 @@
   "author": "Daniel H Cohen <hofcohen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
     "build": "webpack -p"
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
     "bulma": "^0.8.0",
