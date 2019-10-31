@@ -1,4 +1,4 @@
-# MVFCodingTest
+# RecruiterSecretApp
 
 ## The Goal
 
